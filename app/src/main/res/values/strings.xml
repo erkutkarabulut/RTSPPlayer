@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">RTSP Kamera Oynatıcı</string>
+    <string name="camera_1">Kamera 1</string>
+    <string name="camera_2">Kamera 2</string>
+    <string name="start_button">Başlat</string>
+    <string name="stop_button">Durdur</string>
+</resources>

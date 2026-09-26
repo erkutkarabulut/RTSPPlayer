@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="8dp"
+    tools:context=".MainActivity">
+
+    <!-- Başlık -->
+    <TextView
+        android:id="@+id/title_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="RTSP Kamera Oynatıcı"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Kamera 1 -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Kamera 1"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        android:layout_marginTop="8dp" />
+
+    <com.google.android.exoplayer2.ui.StyledPlayerView
+        android:id="@+id/player_view_1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginBottom="4dp" />
+
+    <!-- Kamera 2 -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Kamera 2"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        android:layout_marginTop="8dp" />
+
+    <com.google.android.exoplayer2.ui.StyledPlayerView
+        android:id="@+id/player_view_2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Kontrol Butonları -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp">
+
+        <Button
+            android:id="@+id/start_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Başlat"
+            android:layout_marginEnd="4dp" />
+
+        <Button
+            android:id="@+id/stop_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Durdur"
+            android:layout_marginStart="4dp" />
+    </LinearLayout>
+
+    <!-- Durum Bilgisi -->
+    <TextView
+        android:id="@+id/status_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hazır"
+        android:gravity="center"
+        android:textSize="12sp"
+        android:layout_marginTop="8dp"
+        android:padding="8dp" />
+
+</LinearLayout>
