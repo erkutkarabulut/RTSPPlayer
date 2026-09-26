@@ -10,31 +10,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
-    
-    - name: Set up JDK 11
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up JDK
       uses: actions/setup-java@v4
       with:
         java-version: '11'
         distribution: 'temurin'
-        cache: gradle
 
     - name: Make gradlew executable
-      run: chmod +x gradlew
+      run: chmod +x ./gradlew
 
-    - name: Download Gradle Wrapper
-      run: |
-        mkdir -p gradle/wrapper
-        cd gradle/wrapper
-        wget -q https://services.gradle.org/distributions/gradle-7.5-all.zip
-        unzip -q gradle-7.5-all.zip
-        cd ../..
-
-    - name: Build with Gradle
-      run: gradle assembleDebug --stacktrace
+    - name: Build APK
+      run: ./gradlew clean assembleDebug --no-daemon
 
     - name: Upload APK
+      if: success()
       uses: actions/upload-artifact@v4
       with:
-        name: app-debug
+        name: APK
         path: app/build/outputs/apk/debug/app-debug.apk
